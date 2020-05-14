@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+:root{
+    --header-footer-color:rgb(40, 160, 240);
+}
+
+#contenedor{
+    display: flex;
+    flex-direction: column;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    height: 80px;
+    background-color:var(--header-footer-color);
+    color: white;
+    padding: 15px;
+}
+
+/*danto estilo a la barra y URl*/
+nav ul li{
+    display: inline-block;
+    padding: 10px;
+    padding-top: 25px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a:hover{
+    color:rgb(241, 11, 22);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/*Dando estilo a contenedor princiapl*/
+#principal{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 450px;
+    background-image: url(../img/inicial2.JPG);   
+    background-size: cover;
+}   
+
+#principal > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    height: 150px;
+    width: 550px;
+    background-color: white;
+    border-radius: 15px;
+    opacity: .4;
+}    
+
+#principal {
+    width: 100%;
+}
+
+#principal h1{
+    font-weight: bold;
+    font-size: 30px;
+    padding: 10px;
+}
+
+#contenido{
+    display: flex;
+    flex-direction: column;
+}
+
+.descripcion h2{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    position: center;
+}
+
+/*Dando estilo al contenido*/
+#contenido > article{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#contenido article img{
+    width: 250px;
+    border-radius: 25px;
+    transition-duration: 1s;
+}
+
+#contenido article img:hover{
+    transform: scale(1.1, 1.1);
+    filter: brightness(120%);
+}
+
+#contenido article .descripcion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+}
+
+#contenido {
+    background-color: rgb(158, 238, 207);
+}
+
+#contenido #playa > *,
+#contenido #parque > *,
+#contenido #rio > *{
+    padding: 15px;
+}
+
+.descripcion{
+    width: 600px;
+}
+
+/*Dando estilo al pie de pagina y formulario*/
+footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--header-footer-color);
+    color: black;
+    text-align: center;
+}
+
+footer > *{
+    padding: 15px;
+}
+
+footer #direccion{
+    margin-left: 5px;
+    position: relative;
+    font-style: italic;
+}
+
+form[name="contacto"]{
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    width: auto; 
+}
+
+form[name="contacto"] textarea{
+    height: 50px;
+    width:100%;
+    border: 1px solid lightgray;
+}
+
+form input[type="email"]{
+    width:100%;
+    border: 1px solid lightgray;
+}
+
+/*Responsive*/
+@media screen and (max-width:900px){
+    #contenido{
+        width: 100%;
+    }
+    #contenido #playa img:nth-child(1){
+        display: none;
+    }
+    #contenido #parque img:nth-child(1){
+        display: none;
+    }
+    #contenido #rio img:nth-child(1){
+        display: none;
+    }
+    form[name="contacto"]{
+        width: 300px; 
+    }
+}
+
+input[type="submit"]{
+    background-color:rgb(4, 114, 148);
+    padding: 15px;
+    color:white;
+    border: 0;
+    border-radius:5px;
+}
+
+input[type="submit"]:hover{
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media screen and (max-width:500px){
+    header{
+        flex-direction:column;
+        padding: 0;
+    }
+    nav ul li{
+        padding: 0;
+    }
+    #principal > div {
+        margin: 5px;
+    }
+    #principal h1{
+        font-size: 20px;
+    }
+    #principal p{
+        font-size: 12px;
+    }
+    #contenido #playa img:nth-child(1){
+        display: none;
+    }
+    #contenido #parque img:nth-child(1){
+        display: none;
+    }
+    #contenido #rio img:nth-child(1){
+        display: none;
+    }
+    #contenido > article{
+        align-items: center;
+        flex-direction: column;
+    }
+    footer{
+        align-items: center;
+        flex-direction: column;
+    }
+}
